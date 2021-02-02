@@ -11,3 +11,13 @@ export const collide = (x1, y1, x2, y2, radius) => {
     return false;
   }
 }
+
+export const getBWValue = (red, green, blue, isReversed) => {
+  const detect = 2;
+  if (!isReversed) {
+    return 255 - Math.floor((red + green + blue) / detect);
+  } else {
+    return Math.floor((red + green + blue) / detect);
+  }
+
+}
