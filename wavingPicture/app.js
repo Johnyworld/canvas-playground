@@ -61,7 +61,7 @@ class App {
   }
 
   drawImgae() {
-    // 가로가 세로보다 길어지면 숫자가 커짐.
+    // 가로가 세로보다 길어지면 숫자가 작아짐.
     const stageRatio = this.stageWidth / this.stageHeight;
     const imgRatio = this.image.width / this.image.height;
 
