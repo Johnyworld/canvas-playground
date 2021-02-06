@@ -1,4 +1,4 @@
-import { coverSizing } from './util.js';
+import { coverSizing, getImageColor } from './util.js';
 
 class App {
   constructor() {
@@ -24,6 +24,11 @@ class App {
   drawImage() {
     const newImage = coverSizing(this.canvas.width, this.canvas.height, this.image.width, this.image.height);
     this.ctx.drawImage(this.image, 0, 0, this.image.width, this.image.height, newImage.x, newImage.y, newImage.width, newImage.height);
+
+    const imageColor = getImageColor(this.ctx, this.canvas.width, this.canvas.height, 0, 700);
+    console.log(imageColor)
+    this.ctx.fillStyle = `rgba(${imageColor.red}, ${imageColor.green}, ${imageColor.blue})`;
+    this.ctx.fillRect(50, 50, 50, 50);
   }
 }
 

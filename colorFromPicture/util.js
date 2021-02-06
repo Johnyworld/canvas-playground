@@ -31,3 +31,17 @@ export const coverSizing = (frameWidth, frameHeight, imageWidth, imageHeight) =>
 
   return newImage;
 }
+
+
+export const getImageColor = (context, width, height, x, y) => {
+  const imgData = context.getImageData(0, 0, width, height);
+
+  const pixelIndex = (x + y * width) * 4;
+
+  return {
+    red: imgData.data[pixelIndex],
+    green: imgData.data[pixelIndex + 1],
+    blue: imgData.data[pixelIndex + 2],
+    alpha: imgData.data[pixelIndex + 3],
+  }
+}
